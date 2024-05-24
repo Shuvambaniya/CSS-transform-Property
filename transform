@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative CSS Transformations with Local Images</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #f0f0f0, #d0d0d0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            margin-bottom: 50px;
+            font-size: 2.5em;
+            color: #333;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 20px;
+            font-size: 1.2em;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .box::after {
+            content: attr(data-text);
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 0.8em;
+        }
+
+        .rotate {
+            background-image: url('rotate.jpg');
+        }
+
+        .rotate:hover {
+            transform: rotate(45deg);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .scale {
+            background-image: url('scale.jpg');
+        }
+
+        .scale:hover {
+            transform: scale(1.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .translate {
+            background-image: url('translate.jpg');
+        }
+
+        .translate:hover {
+            transform: translate(20px, 20px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .skew {
+            background-image: url('skew.jpg');
+        }
+
+        .skew:hover {
+            transform: skew(20deg, 10deg);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .rotate-scale {
+            background-image: url('rotate-scale.jpg');
+        }
+
+        .rotate-scale:hover {
+            transform: rotate(30deg) scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .rotate-translate {
+            background-image: url('rotate-translate.jpg');
+        }
+
+        .rotate-translate:hover {
+            transform: rotate(20deg) translate(15px, 15px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .scale-skew {
+            background-image: url('scale-skew.jpg');
+        }
+
+        .scale-skew:hover {
+            transform: scale(1.1) skew(15deg, 5deg);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML Webpage Using All the CSS Transform Properties</h1>
+    <div class="container">
+        <div class="box rotate" data-text="Rotate"></div>
+        <div class="box scale" data-text="Scale"></div>
+        <div class="box translate" data-text="Translate"></div>
+        <div class="box skew" data-text="Skew"></div>
+        <div class="box rotate-scale" data-text="Rotate & Scale"></div>
+        <div class="box rotate-translate" data-text="Rotate & Translate"></div>
+        <div class="box scale-skew" data-text="Scale & Skew"></div>
+    </div>
+</body>
+</html>
